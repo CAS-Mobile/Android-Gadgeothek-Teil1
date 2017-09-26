@@ -38,10 +38,56 @@
             android:layout_height="match_parent"
             android:fillViewport="true">
 
-            <!-- TODO: Erstellen Sie hier die Loginmaske.
-            IDs können Sie teilweise selbst  bestimmen, oder schauen
-            Sie in der onCreate-Methode nach welche IDs der Code erwartet. -->
+            <LinearLayout
+                android:id="@+id/email_login_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_password"
+                    android:imeActionLabel="@string/action_sign_in"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+
+                <Button
+                    android:id="@+id/signInButton"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/action_sign_in"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    style="?android:textAppearanceSmall"
+                    android:text="Neu Registrieren"
+                    android:onClick="onRegisterButton"
+                    android:id="@+id/registerButton"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal" />
+
+            </LinearLayout>
         </ScrollView>
 
     </LinearLayout>

@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
 
 import ch.hsr.mge.gadgeothek.R;
@@ -27,11 +29,18 @@ public class RegisterActivity extends AbstractAuthenticationActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // TODO Views den Attributen zuweisen
+        // Set up the login form.
+        emailView = (EditText) findViewById(R.id.email);
+        nameView = (EditText) findViewById(R.id.name);
+        matrikelNrView = (EditText) findViewById(R.id.matrikelnr);
+        passwordView = (EditText) findViewById(R.id.password);
 
-
-        // TODO Beim Button-Click soll die attemptRegistration Methode aufgerufen werden.
-
+        ((Button) findViewById(R.id.registerButton)).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                attemptRegistration();
+            }
+        });
 
         loginFormView = findViewById(R.id.login_form);
         progressView = findViewById(R.id.login_progress);

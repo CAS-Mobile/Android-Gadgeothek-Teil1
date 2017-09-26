@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
 
 import ch.hsr.mge.gadgeothek.R;
@@ -26,8 +27,12 @@ public class LoginActivity extends AbstractAuthenticationActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // TODO Views den Attributen zuweisen
+        // Set up the login form.
+        emailView = (EditText) findViewById(R.id.email);
+        passwordView = (EditText) findViewById(R.id.password);
 
+        emailView.setText("m@hsr.ch");
+        passwordView.setText("12345");
 
         SharedPreferences preferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
         String email = preferences.getString(EMAIL, null);
@@ -35,8 +40,12 @@ public class LoginActivity extends AbstractAuthenticationActivity {
         emailView.setText(email);
         passwordView.setText(password);
 
-        // TODO Beim Button-Click soll die attemptLogin Methode aufgerufen werden.
-
+        findViewById(R.id.signInButton).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                attemptLogin();
+            }
+        });
 
         loginFormView = findViewById(R.id.login_form);
         progressView = findViewById(R.id.login_progress);
@@ -53,10 +62,9 @@ public class LoginActivity extends AbstractAuthenticationActivity {
         emailView.setError(null);
         passwordView.setError(null);
 
-        // TODO Get real values from Views.
-        String email = null;
-        String password = null;
-
+        // Store values at the time of the login attempt.
+        String email = emailView.getText().toString();
+        String password = passwordView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;

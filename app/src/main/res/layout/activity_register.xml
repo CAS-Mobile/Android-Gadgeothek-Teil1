@@ -38,10 +38,69 @@
             android:layout_height="match_parent"
             android:fillViewport="true">
 
-            <!-- TODO: Erstellen Sie hier die Registrierungsmaske.
-            IDs können Sie teilweise selbst  bestimmen, oder schauen
-            Sie in der onCreate-Methode nach welche IDs der Code erwartet. -->
+            <LinearLayout
 
+                android:id="@+id/email_login_form"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_name"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:layout_marginTop="16dp" />
+
+                <EditText
+                    android:id="@+id/matrikelnr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_matrikelnr"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:layout_marginTop="16dp" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_password"
+                    android:imeActionLabel="@string/action_register"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:layout_marginTop="16dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/registerButton"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_register"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </ScrollView>
     </LinearLayout>
 </RelativeLayout>
