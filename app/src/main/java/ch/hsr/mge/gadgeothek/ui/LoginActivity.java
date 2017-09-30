@@ -31,9 +31,6 @@ public class LoginActivity extends AbstractAuthenticationActivity {
         emailView = (EditText) findViewById(R.id.email);
         passwordView = (EditText) findViewById(R.id.password);
 
-        emailView.setText("m@hsr.ch");
-        passwordView.setText("12345");
-
         SharedPreferences preferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
         String email = preferences.getString(EMAIL, null);
         String password = preferences.getString(PASSWORD, null);
